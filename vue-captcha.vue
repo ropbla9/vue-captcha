@@ -3,11 +3,11 @@
 		<div class="content-captcha">
 			<canvas class="vue-captcha-img" width="150" height="25"></canvas>
 		</div>
-		<div class="content-text" v-show="opc === 1 && !auth">
+		<div class="content-text" v-show="!auth">
 			<input type="text" v-on:keyup="inputText" v-model="text" placeholder="insert key..." />
 		</div>
 		<div class="content-ok" v-show="auth" v-bind:style="`background-color: ${color};`">
-			<small> <i class="fa fa-thumbs-up"></i> success.!</small>
+			<small> <i class="fa fa-thumbs-up"></i> success</small>
 		</div>
 		<div class="content-fixed" v-show="opc === 2 && !auth" v-bind:style="`top:${contenTextTop}px;left:${contenTextLeft}px;`">
 			<table class="vue-captcha-table" cellspaceng="0">
@@ -148,7 +148,7 @@
 			},
 			success (acert) {
 				if (acert === 6) {
-					this.callSuccess()
+					this.$emit('success')
 				}
 			}
 		},
