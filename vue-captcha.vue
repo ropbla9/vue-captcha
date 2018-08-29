@@ -74,10 +74,6 @@
 			<button type="button" v-on:click="picture" v-bind:style="`color: ${color};`" title="Refresh">
 				<i class="fa fa-refresh"></i>
 			</button>
-			<button type="button" v-on:click="opc = (opc === 1) ? 0 : 1"
-        v-bind:style="`color: ${color};`" v-show="resolve === 'text' || resolve === 'all'" title="Written">
-				<i class="fa fa-pencil"></i>
-			</button>
 			<button type="button" v-on:click="ContentFixed"
         v-bind:style="`color: ${color};`" v-show="resolve === 'digit' || resolve === 'all'" title="Digit">
 				<i class="fa fa-keyboard-o"></i>
